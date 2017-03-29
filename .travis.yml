@@ -1,0 +1,30 @@
+language:
+  - cpp
+
+sudo:
+  - false
+
+dist:
+  - trusty
+
+install:
+  - uname -a
+
+  - echo ${PATH}
+
+  - which python3
+  - python3 --version
+
+  - which g++
+  - g++ --version
+
+  - which clang++
+  - clang++ --version
+
+  - which pip3
+  - pip3 --version
+
+  - pip3 install --user requests
+
+script:
+  - echo "OK"
