@@ -1,11 +1,19 @@
 language:
-  - cpp
+  - minimal
+
+os:
+  - linux
 
 sudo:
   - false
 
 dist:
   - trusty
+
+addons:
+  apt:
+    packages:
+      - python3-pip
 
 install:
   - uname -a
