@@ -10,10 +10,17 @@ sudo:
 dist:
   - trusty
 
+# Install packages differs for container-based infrastructure
+# * https://docs.travis-ci.com/user/migrating-from-legacy/#How-do-I-install-APT-sources-and-packages%3F
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
       - python3-pip
+
+      - g++-5
+      - gcc-5
 
 install:
   - uname -a
@@ -23,8 +30,8 @@ install:
   - which python3
   - python3 --version
 
-  - which g++
-  - g++ --version
+  - which g++-5
+  - g++-5 --version
 
   - which clang++
   - clang++ --version
